@@ -1,0 +1,350 @@
+@import "variables";
+
+* {
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: $container-width;
+    margin: auto;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+.button {
+    border: none;
+    outline: none;
+    color: #FFFFFF;
+    font-size: 16px;
+    border-radius: 33px;
+    background-color: $primary-color;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+
+/*..........Hero Section..........*/
+
+.hero-section {
+    padding: $hero-padding;
+    background-color: $hero-back-color;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.logo {
+    width: 200px;
+}
+
+@mixin main-nav {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.main-nav {
+    @include main-nav;
+}
+
+.nav-list {
+    @include main-nav;
+    list-style: none;
+
+    a:hover {
+        transition: 0.5s;
+        color: $primary-color;
+    }
+}
+
+.nav-link:link,
+.nav-link:visited {
+    display: inline-block;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+    color: #000000;
+}
+
+.signin-btn {
+    @extend .button;
+    padding: 12px 28px;
+}
+
+.menu-button {
+    display: none;
+    border: none;
+    background: transparent;
+
+    i {
+        font-size: 20px;
+    }
+}
+
+.signin-btn:hover {
+    background-color: $secondary-color;
+}
+
+.hero-content {
+    margin-top: 90px;
+    display: grid;
+    grid-template-columns: auto auto;
+    column-gap: 20px;
+}
+
+.hero-content-text {
+    h1 {
+        font-size: $hero-title;
+        margin: 10px 0px;
+
+        span {
+            color: $primary-color;
+        }
+    }
+
+    p:first-child {
+        color: #FD511A;
+        line-height: 24px;
+    }
+
+    .last-text {
+        display: block;
+        color: #6C6B6B;
+    }
+
+    .last {
+        margin-top: 10px;
+    }
+}
+
+.get-started-btn {
+    @extend .button;
+    padding: 12px 36px;
+    margin-top: 25px;
+}
+
+.get-started-btn:hover {
+    background-color: $secondary-color;
+}
+
+.hero-illustration {
+    width: $illustration-width;
+}
+
+/*..........Section 2..................*/
+
+@mixin item-title {
+    font-size: 24px;
+    font-weight: 500;
+    margin-top: 20px;
+    color: $title-color;
+}
+
+@mixin item-sub-title {
+    font-size: 16px;
+    color: $second-title-color;
+}
+
+.section2 {
+    padding: $section-padding;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 25px;
+}
+
+.item {
+    height: 270px;
+    width: 270px;
+    background: $item-background;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 3px solid transparent;
+    transition: 0.5s;
+
+    img {
+        width: 65px;
+    }
+
+    span:nth-child(2) {
+        @include item-title;
+        display: block;
+    }
+
+    span:nth-child(3) {
+        @include item-sub-title;
+        display: block;
+    }
+}
+
+.item:hover {
+    border: 3px solid $primary-color;
+}
+
+.item2 {
+    background: #FFFFFF;
+    box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+
+    img {
+        width: 80px;
+    }
+}
+
+/*..........Course Section..................*/
+
+.courses {
+    padding: $section-padding;
+}
+
+.section-title {
+    font-size: 36px;
+    color: $title-color;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 0;
+}
+
+.course-box {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 30px;
+}
+
+.course {
+    width: 370px;
+    background: #FFFFFF;
+    box-shadow: 0px 10px 40px rgba(0, 0, 0, 0.1);
+    border-radius: 18px;
+    padding: 20px;
+    box-sizing: border-box;
+
+    img {
+        width: 100%;
+        height: 235px;
+    }
+}
+
+.course-title {
+    @include item-title;
+    display: block
+}
+
+.course-sub-title {
+    @include item-sub-title;
+    display: block
+}
+
+.buy-course-btn {
+    @extend .button;
+    padding: 8px 28px;
+    margin-top: 20px;
+}
+
+.buy-course-btn:hover {
+    background-color: $secondary-color;
+}
+
+.course-icon {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.icon {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+
+    img {
+        height: 24px;
+        width: 24px;
+    }
+}
+
+.icon-title {
+    @include item-sub-title;
+}
+
+
+/*..........Testimonial...............*/
+
+.testimonial {
+    padding: $section-padding;
+    margin-bottom: 30px;
+}
+
+.testimonial-body {
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 30px;
+    margin: 0px 150px;
+
+    img {
+        height: 120px;
+        width: 120px;
+        border-radius: 50%;
+    }
+}
+
+
+/*.......Footer..........*/
+
+.footer {
+    color: #FFFFFF;
+    padding: $footer-padding;
+    background-color: $footer-background;
+}
+
+.footer-flexbox {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    column-gap: 80px;
+    row-gap: 30px;
+
+    ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    ul li {
+        margin-bottom: 5px;
+    }
+}
+
+.link-item span {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.footer-title {
+    max-width: 370px;
+    line-height: 30px;
+}
+
+.footer-link {
+    color: white;
+    text-decoration: none;
+}
+
+.footer-link:hover {
+    text-decoration: underline;
+}
+
+.copyright {
+    text-align: center;
+    margin-top: 80px;
+    color: #CDCDCD;
+}
